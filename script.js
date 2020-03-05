@@ -1,12 +1,12 @@
-window.onload  = function () {
+window.onload = function () {
 	initShoppingList();
 };
 
 function initShoppingList() {
-	let form = document.getElementById("item-from");
+	let form = document.getElementById("item-form");
 
 	form.addEventListener("submit", (event) => {
-		handleItemForm(e, form);
+		handleItemForm(event, form);
 	});
 }
 
@@ -28,7 +28,7 @@ function handleItemForm(event, formRef) {
 
 		//creates list item html and appends to page.
 		let itemHtml = createListItemHtml(itemName.value, itemAmount.value, id);
-		console.log("item HTML:", itemHtml);
+		console.log("Item HTML:", itemHtml);
 		let  itemListRef = document.getElementById("shopping-list");
 		itemListRef.insertAdjacentHTML("afterend", itemHtml);
 
@@ -42,11 +42,11 @@ function setDeleteButtonEvent(id) {
 	});
 }
 
-function createListItemHtml(itemNmae, itemAmount, id) {
-	return '<li id= "item${id}">
-						${itemName.value}- ${itemAmount.value}
-		<button id= type="button{id}">Delete item</button>
-				</li>';
+function createListItemHtml(itemName, itemAmount, id) {
+	return `<li id="item${id}">
+				${itemName} - ${itemAmount}
+			<button id="button${id}" type="button">Delete Item</button>
+				</li>`;
 }
 
 function removeListItem(id) {
