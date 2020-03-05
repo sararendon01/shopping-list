@@ -57,6 +57,6 @@ function removeListItem(id) {
 function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	return Math.floor(math.randon() * (max - min)) + min; // The maximum
+	return Math.floor(Math.random() * (max - min)) + min; // The maximum
 
 }
